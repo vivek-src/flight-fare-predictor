@@ -30,7 +30,7 @@ class FlightPricePredictor:
         return self.df
     
     def preprocess_data(self):
-        """Preprocess the data for modeling"""
+        # Preprocess the data for modeling 
         print("Preprocessing data...")
         
         # Create a copy for preprocessing
@@ -123,12 +123,12 @@ class FlightPricePredictor:
         self.y_train = y_train
         self.y_test = y_test
         
-        print("Data preprocessing completed!")
+        print("Data preprocessing completed.")
         return X_train_scaled, X_test_scaled, y_train, y_test
 
     
     def convert_duration_to_minutes(self, duration_str):
-        """Convert duration string to minutes"""
+        # Convert duration string to minutes
         try:
             if 'h' in duration_str and 'm' in duration_str:
                 hours = int(duration_str.split('h')[0])
@@ -146,8 +146,8 @@ class FlightPricePredictor:
             return 0
     
     def train_model(self):
-        """Train the Random Forest model"""
-        print("Training model...")
+        # Train the Random Forest model 
+        print("Start Training...")
         
         self.model = RandomForestRegressor(
             n_estimators=100,
@@ -169,15 +169,15 @@ class FlightPricePredictor:
         rmse = np.sqrt(mse)
         r2 = r2_score(self.y_test, y_pred)
         
-        print(f"Model Training Completed!")
-        print(f"Mean Absolute Error: ₹{mae:.2f}")
-        print(f"Root Mean Square Error: ₹{rmse:.2f}")
+        print(f"Model Training Completed.")
+        print(f"Mean Absolute Error: {mae:.2f}")
+        print(f"Root Mean Square Error: {rmse:.2f}")
         print(f"R² Score: {r2:.4f}")
         
         return mae, rmse, r2
     
     def save_model(self, filepath=None):
-        """Save the trained model and encoders"""
+        # Save the trained model and encoders
         
         # If no filepath is given OR a directory is passed, save to default file
         if filepath is None or os.path.isdir(filepath):
@@ -199,7 +199,7 @@ class FlightPricePredictor:
         print(f"Model saved to {filepath}") 
         
     def load_model(self, filepath='flight_price_model.joblib'):
-        """Load the trained model and encoders"""
+        # Load the trained model and encoders 
         model_data = joblib.load(filepath)
         self.model = model_data['model']
         self.label_encoders = model_data['label_encoders']
@@ -209,7 +209,7 @@ class FlightPricePredictor:
     
     def predict_price(self, airline, source, destination, date_of_journey, 
                      dep_time, arrival_time, duration, total_stops, additional_info):
-        """Predict flight price for given parameters"""
+        # Predict flight price for given parameters
         
         # Preprocess input data
         journey_date = pd.to_datetime(date_of_journey)
@@ -268,9 +268,9 @@ class FlightPricePredictor:
         return predicted_price
     
     def plot_feature_importance(self):
-        """Plot feature importance"""
+        # Plot feature importance  
         if self.model is None:
-            print("Model not trained yet!")
+            print("Model not trained yet.")
             return
         
         feature_importance = pd.DataFrame({
@@ -288,9 +288,9 @@ class FlightPricePredictor:
         plt.show()
     
     def plot_prediction_vs_actual(self):
-        """Plot predicted vs actual prices"""
+        # Plot predicted vs actual prices
         if self.model is None:
-            print("Model not trained yet!")
+            print("Model not trained yet.")
             return
         
         y_pred = self.model.predict(self.X_test)
@@ -306,7 +306,7 @@ class FlightPricePredictor:
         plt.show()
 
 def main():
-    """Main function to train and save the model"""
+    # Main function to train and save the model 
     predictor = FlightPricePredictor()
 
     train_path = os.path.join(DATA_DIR, "Data_Train.xlsx")
@@ -327,7 +327,7 @@ def main():
     predictor.plot_feature_importance()
     predictor.plot_prediction_vs_actual()
     
-    print("\nModel training and saving completed successfully!")
+    print("\nModel training and saving completed successfully.")
 
 if __name__ == "__main__":
     main() 

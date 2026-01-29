@@ -14,8 +14,8 @@ TRAIN_DATA_PATH = os.path.join(DATA_DIR, "Data_Train.xlsx")
 MODEL_PATH = os.path.join(MODEL_DIR, "flight_price_model.joblib")
 
 def test_model_training():
-    """Test the model training process"""
-    print("Testing Model Training...")
+    # Test the model training process
+    print("Testing Trainned Model...")
     
     try:
         predictor = FlightPricePredictor()
@@ -33,8 +33,8 @@ def test_model_training():
         # Train model
         mae, rmse, r2 = predictor.train_model()
         print(f"Model training completed")
-        print(f"   MAE: ₹{mae:.2f}")
-        print(f"   RMSE: ₹{rmse:.2f}")
+        print(f"   MAE: {mae:.2f}")
+        print(f"   RMSE: {rmse:.2f}")
         print(f"   R²: {r2:.4f}")
         
         # Save model
@@ -48,7 +48,7 @@ def test_model_training():
         return False
 
 def test_model_prediction():
-    """Test model prediction functionality"""
+    # Test model prediction functionality
     print("Testing Model Prediction...")
     
     try:
@@ -95,7 +95,7 @@ def test_model_prediction():
         return False
 
 def test_data_analysis():
-    """Test data analysis functionality"""
+    # Test data analysis functionality 
     print("Testing Data Analysis...")
     
     try:
@@ -113,7 +113,7 @@ def test_data_analysis():
                 if count > 0:
                     print(f"   {col}: {count}")
         else:
-            print("No missing values found")
+            print("No missing values found.")
         
         categorical_cols = ['Airline', 'Source', 'Destination', 'Total_Stops']
         for col in categorical_cols:
@@ -127,7 +127,7 @@ def test_data_analysis():
         return False
 
 def main():
-    """Run all tests"""
+    #Run all tests 
     print("Flight Price Predictor - Model Testing")
     print("=" * 50)
     
