@@ -38,17 +38,18 @@ The trained model is serialized using joblib and served through an API.
 #### Backend & Machine Learning
 
 ![Python](https://img.shields.io/badge/Python-3.14+-blue?style=flat-square&logo=python)
-![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?style=flat-square&logo=pandas)
-![NumPy](https://img.shields.io/badge/NumPy-Numerical%20Computing-013243?style=flat-square&logo=numpy)
-![Scikit-learn](https://img.shields.io/badge/Scikit--learn-ML-F7931E?style=flat-square&logo=scikit-learn)
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?style=flat-square&logo=fastapi)
-![Joblib](https://img.shields.io/badge/Joblib-Model%20Serialization-555555?style=flat-square)
+![Pandas](https://img.shields.io/badge/Pandas--150458?style=flat-square&logo=pandas)
+![NumPy](https://img.shields.io/badge/NumPy--013243?style=flat-square&logo=numpy)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=flat-square&logo=scikit-learn)
+![FastAPI](https://img.shields.io/badge/FastAPI--009688?style=flat-square&logo=fastapi)
+![Joblib](https://img.shields.io/badge/Joblib--555555?style=flat-square)
 
 #### Frontend
 
-![React](https://img.shields.io/badge/React-UI-61DAFB?style=flat-square&logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-Type%20Safe-3178C6?style=flat-square&logo=typescript)
-![Axios](https://img.shields.io/badge/Axios-API%20Client-5A29E4?style=flat-square)
+![React](https://img.shields.io/badge/React--61DAFB?style=flat-square&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript--3178C6?style=flat-square&logo=typescript)
+![Tailwind%20CSS](https://img.shields.io/badge/Tailwind%20CSS--06B6D4?style=flat-square&logo=tailwindcss)
+![Axios](https://img.shields.io/badge/Axios--5A29E4?style=flat-square)
 
 ## Getting Started
 
