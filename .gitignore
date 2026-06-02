@@ -1,0 +1,56 @@
+# Python / Virtual Environments
+venv/
+.env
+.env.*
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Python build / tooling
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# ML / Data Science artifacts
+*.joblib
+*.pkl
+*.h5
+*.model
+
+# Generated plots / figures
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# Logs
+*.log
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+
+# Node / React
+node_modules/
+dist/
+build/
+npm-debug.log*
+
+# Frontend env files
+frontend/.env
+frontend/.env.*
+
+# FastAPI / Uvicorn
+
+*.pid
+
+.pytest_cache/

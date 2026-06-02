@@ -122,7 +122,7 @@ npm run dev
 
 ## Screenshot
 
-![UI](image.png)
+![UI](ui.png)
 
 ## Model Performance
 
