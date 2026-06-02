@@ -1,1 +1,126 @@
 @import "tailwindcss";
+
+:root {
+  --clay-bg: #f0f3ff;
+  --clay-card-bg: #ffffff;
+  --clay-highlight: rgba(255, 255, 255, 0.8);
+  --clay-shadow-inner: rgba(163, 177, 198, 0.4);
+  --clay-shadow-outer: rgba(163, 177, 198, 0.5);
+  --clay-accent: #6c5ce7;
+}
+
+body {
+  background-color: var(--clay-bg);
+  color: #2d3436;
+  font-family: 'Quicksand', 'Inter', sans-serif;
+  margin: 0;
+}
+
+@layer utilities {
+  .clay-card {
+    background: var(--clay-card-bg);
+    border-radius: 40px;
+    box-shadow: 
+      12px 12px 24px var(--clay-shadow-outer),
+      inset -8px -8px 16px var(--clay-shadow-inner),
+      inset 8px 8px 16px var(--clay-highlight);
+    border: none;
+  }
+
+  .clay-input {
+    background: var(--clay-bg);
+    border-radius: 20px;
+    box-shadow: 
+      inset 4px 4px 8px var(--clay-shadow-inner),
+      inset -4px -4px 8px var(--clay-highlight);
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+
+  .clay-input:focus {
+    box-shadow: 
+      inset 6px 6px 12px var(--clay-shadow-inner),
+      inset -6px -6px 12px var(--clay-highlight);
+    background: #ffffff;
+  }
+
+  .clay-btn {
+    background: var(--clay-accent);
+    color: white;
+    border-radius: 24px;
+    box-shadow: 
+      8px 8px 16px var(--clay-shadow-outer),
+      inset -6px -6px 12px rgba(0, 0, 0, 0.2),
+      inset 6px 6px 12px rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .clay-btn:active {
+    transform: scale(0.95);
+    box-shadow: 
+      4px 4px 8px var(--clay-shadow-outer),
+      inset -2px -2px 4px rgba(0, 0, 0, 0.2),
+      inset 2px 2px 4px rgba(255, 255, 255, 0.3);
+  }
+
+  .clay-btn:disabled {
+    background: #dcdde1;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  @keyframes flight-dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .animate-flight-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: flight-dash 2s ease-out forwards;
+  }
+
+  @keyframes plane-float {
+    0%, 100% { transform: translateY(0) rotate(90deg); }
+    50% { transform: translateY(-5px) rotate(90deg); }
+  }
+
+  .plane-floating {
+    animation: plane-float 2s ease-in-out infinite;
+  }
+
+  .ticket-divider {
+    border-left: 2px dashed var(--clay-shadow-inner);
+    position: relative;
+  }
+
+  .ticket-divider::before, .ticket-divider::after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    background: var(--clay-bg);
+    border-radius: 50%;
+    box-shadow: inset 4px 4px 8px var(--clay-shadow-inner);
+  }
+
+  .ticket-divider::before { top: -10px; }
+  .ticket-divider::after { bottom: -10px; }
+
+  .barcode {
+    background: repeating-linear-gradient(
+      90deg,
+      #2d3436,
+      #2d3436 2px,
+      transparent 2px,
+      transparent 4px
+    );
+  }
+}
