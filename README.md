@@ -62,7 +62,7 @@ The trained model is serialized using joblib and served through an API.
 #### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/viveek-sh/flight-fare-predictor.git
+git clone https://github.com/vivek-src/flight-fare-predictor.git
 cd flight-fare-predictor
 ```
 
